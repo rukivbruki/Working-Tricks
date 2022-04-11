@@ -1,4 +1,6 @@
-const { getRandomInt } = require('../utils/getRandomInt');
+const {
+  makeFeedingRation,
+} = require('../codingParadigms/utils/makeFeedingRation');
 
 const classCreator = (type) => {
   return {
@@ -18,16 +20,7 @@ const pet = (type) =>
   class Pet extends classCreator(type) {
     #petType = super.constructor.name;
     #feeding = {
-      Cat: new Map(
-        Array.from({ length: 8 }, (_, idx) => [
-          ++idx,
-          {
-            low: getRandomInt(33, 67),
-            medium: getRandomInt(42, 84),
-            high: getRandomInt(50, 101),
-          },
-        ]),
-      ),
+      Cat: makeFeedingRation(),
       Turtle(name) {
         return `Give ${name} much food as it can eat in half an hour.`;
       },

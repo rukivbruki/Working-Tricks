@@ -1,5 +1,7 @@
-const { measurementFunction } = require('../utils/executionSpeedMeasurement');
-const { getRandomCondition } = require('../utils/getRandomCondition');
+const {
+  measurementFunction,
+} = require('../commonUtils/executionSpeedMeasurement');
+const { getRandomCondition } = require('../commonUtils/getRandomCondition');
 
 const getResultTroughMap = () => {
   const conditionsMap = new Map();
