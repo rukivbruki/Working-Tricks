@@ -1,4 +1,4 @@
-const { getRandomInt } = require('../../dist/utils/getRandomInt.js');
+const { getRandomInt } = require('../../commonUtils/getRandomInt');
 
 const makeFeedingRation = () =>
   new Map(
