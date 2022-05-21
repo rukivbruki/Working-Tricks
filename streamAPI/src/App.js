@@ -3,9 +3,9 @@ import 'antd/dist/antd.css';
 import './App.css';
 import './index.css';
 
-import WithStream from './WithStream';
-import StatusMonitor from './StatusMonitor';
-import DataConsumer from './DataConsumer';
+import WithStream from './components/WithStream';
+import StatusMonitor from './components/StatusMonitor';
+import DataConsumer from './components/DataConsumer';
 
 function App() {
   return (

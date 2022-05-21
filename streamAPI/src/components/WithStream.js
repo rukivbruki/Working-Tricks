@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import useStreamApi from './custom-hooks/useStreamApi';
+import useStreamApi from '../custom-hooks/useStreamApi';
 
 export default function WithStream({ children }) {
   const [reader, contentLength] = useStreamApi(

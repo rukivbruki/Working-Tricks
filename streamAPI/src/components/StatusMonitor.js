@@ -5,8 +5,6 @@ export default function StatusMonitor({
   fetchedPercentage,
   processedPercentage,
 }) {
-  // console.log(fetchedPercentage);
-  console.log(processedPercentage);
   const downloading = fetchedPercentage !== 100 ? 'downloading' : '';
   const processing = processedPercentage !== 100 ? 'processing' : '';
   const done = processedPercentage === 100 ? 'done' : '';
