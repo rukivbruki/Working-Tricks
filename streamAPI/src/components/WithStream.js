@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+
 import useStreamApi from '../custom-hooks/useStreamApi';
 
 export default function WithStream({ children }) {
   const [reader, contentLength] = useStreamApi(
-    'https://raw.githubusercontent.com/GreenBuildingXML/Sample_gbXML_Files/master/ConferenceCenter%20(Older).xml',
+    'https://raw.githubusercontent.com/rukivbruki/WorkingTricks/master/streamAPI/xmlSample.xml',
   );
   const [fetchedPercentage, setFetchedPercentage] = useState(0);
   const [processedPercentage, setProcessedPercentage] = useState(0);
@@ -14,7 +15,7 @@ export default function WithStream({ children }) {
       reader &&
       (async () => {
         const chunks = [];
-        const chunkedResult = new Uint8Array(4326791);
+        const chunkedResult = new Uint8Array(19339936);
         let receivedLength = 0;
         let position = 0;
 

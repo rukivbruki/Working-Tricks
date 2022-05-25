@@ -10,7 +10,7 @@ module.exports = {
   plugins: ['prettier', 'eslint-plugin-import'],
   rules: {
     'prettier/prettier': 'error',
-    'max-depth': ['error', 0],
-    complexity: ['error', 0],
+    'max-depth': ['error', 5],
+    complexity: ['error', 5],
   },
 };

@@ -1,17 +1,40 @@
 import { Progress, Result } from 'antd';
 import { SmileOutlined, SyncOutlined } from '@ant-design/icons';
+import { memo, useEffect } from 'react';
 
-export default function StatusMonitor({
-  fetchedPercentage,
-  processedPercentage,
-}) {
+import useAnimatedLog from '../custom-hooks/useAnimatedLog';
+
+const Style = {
+  processing: ['color: black', 'background-color: transparent'],
+};
+
+const StatusMonitor = ({ fetchedPercentage, processedPercentage }) => {
+  const [LogMessageAnimation, intervalId, log] = useAnimatedLog();
   const downloading = fetchedPercentage !== 100 ? 'downloading' : '';
   const processing = processedPercentage !== 100 ? 'processing' : '';
   const done = processedPercentage === 100 ? 'done' : '';
 
+  useEffect(() => {
+    if (!downloading) {
+      if (processedPercentage === 0) {
+        LogMessageAnimation();
+      }
+    }
+  }, [downloading]);
+
+  useEffect(() => {
+    if (!downloading) {
+      clearInterval(intervalId);
+      log(`${Math.floor(processedPercentage)}%`, Style.processing);
+    }
+    if (done) {
+      log('data processing has been done!');
+    }
+  }, [processedPercentage]);
+
   const phrases = {
     [downloading]: 'Loading data still in progress ...',
-    [processing]: 'Wait impatiently for results',
+    [processing]: 'We are impatiently waiting for results.',
     [done]: 'Great, we have done all the operations!',
   };
 
@@ -29,4 +52,6 @@ export default function StatusMonitor({
       />
     </>
   );
-}
+};
+
+export default memo(StatusMonitor);
