@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-import useStreamApi from '../custom-hooks/useStreamApi';
+import useStreamsApi from '../custom-hooks/useStreamsApi';
 
 export default function WithStream({ children }) {
-  const [reader, contentLength] = useStreamApi(
+  const [reader, contentLength] = useStreamsApi(
     'https://raw.githubusercontent.com/rukivbruki/WorkingTricks/master/streamAPI/xmlSample.xml',
   );
   const [fetchedPercentage, setFetchedPercentage] = useState(0);

@@ -12,7 +12,7 @@ const Style = {
   ],
 };
 
-export default function () {
+export default function  useAnimatedLog () {
   const [intervalId, setIntervalId] = useState(null);
   const log = (text, extra = []) => {
     let style = Style.base.join(';') + ';';
