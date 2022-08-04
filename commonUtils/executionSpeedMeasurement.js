@@ -12,7 +12,7 @@ function average(measurements) {
 
 async function measurementFunction(func) {
   let measurements = [];
-  for (let i = 0; i < 10000; i++) {
+  for (let i = 0; i < 2; i++) {
     const observer = new PerformanceObserver(
       (list) => list.getEntries()[0].duration,
     );

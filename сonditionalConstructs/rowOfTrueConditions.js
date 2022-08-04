@@ -28,8 +28,8 @@ const getResultTroughAmpersand = () =>
   getRandomCondition() &&
   'result';
 
-getResultTroughMap();
-getResultTroughAmpersand();
+// getResultTroughMap();
+// getResultTroughAmpersand();
 
 measurementFunction(getResultTroughMap);
-// measurementFunction(getResultTroughAmpersand);
+measurementFunction(getResultTroughAmpersand);

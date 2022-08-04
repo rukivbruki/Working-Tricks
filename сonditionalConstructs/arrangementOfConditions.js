@@ -22,8 +22,8 @@ const getResultTroughSwitch = () => {
   }
 };
 
-getResultTroughMap();
-getResultTroughSwitch();
+// getResultTroughMap();
+// getResultTroughSwitch();
 
 measurementFunction(getResultTroughMap);
 measurementFunction(getResultTroughSwitch);

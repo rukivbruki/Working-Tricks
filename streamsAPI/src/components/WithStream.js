@@ -4,7 +4,7 @@ import useStreamsApi from '../custom-hooks/useStreamsApi';
 
 export default function WithStream({ children }) {
   const [reader, contentLength] = useStreamsApi(
-    'https://raw.githubusercontent.com/rukivbruki/WorkingTricks/master/streamAPI/xmlSample.xml',
+    'https://raw.githubusercontent.com/rukivbruki/WorkingTricks/master/streamsAPI/xmlSample.xml',
   );
   const [fetchedPercentage, setFetchedPercentage] = useState(0);
   const [processedPercentage, setProcessedPercentage] = useState(0);

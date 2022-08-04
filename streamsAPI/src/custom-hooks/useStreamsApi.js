@@ -6,7 +6,6 @@ export default function useStreamsApi(source) {
 
   useEffect(() => {
     fetch(source).then((response) => {
-      console.log(source)
       setContentLength(+response.headers.get('Content-Length'));
       setReader(response.body.getReader());
     });
